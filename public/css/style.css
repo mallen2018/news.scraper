@@ -1,0 +1,62 @@
+  body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+  }
+  
+  main {
+      flex: 1 0 auto;
+  }
+  
+  #logo {
+      width: 132px;
+  }
+
+  nav {
+      background-color: black;
+  }
+
+  header {
+    margin-bottom: 0;
+  }
+  
+  .row.right {
+    margin-right: 50px;
+  }
+
+  .npr {
+    background-color: white;
+  }
+  a.brand-logo {
+      margin-left: 40px;
+  }
+  
+  a:hover {
+      -webkit-transform: scale(1.1);
+  }
+
+  div.copyright.grey-text {
+      padding-bottom: 20px;
+      margin-left: 40px;
+  }
+
+.card.hoverable.index {
+  height: 550px;
+}
+
+.card.card-title {
+	font-size: 18px;
+}
+
+#links {
+	margin: 15px;
+}
+
+#deleteNote, #delete {
+	margin-right: 25px;
+}
+
+ul.collapsible {
+	margin-top: 0;
+}
+

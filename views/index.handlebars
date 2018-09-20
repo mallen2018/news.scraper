@@ -1,0 +1,71 @@
+<nav>
+    <div class="nav-wrapper">
+        <a href="/" class="brand-logo">National Public Radio News: Get the latest articles</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/scrape" id="scrape" class="btn-large waves-effect waves-light blue lighten-1">Scrape Articles</a></li>
+            <li><a href="/articles" id="savedArticles">Saved Articles</a></li>
+            <li>
+                <a href="http://www.npr.org/sections/news/" target="blank"><img id="logo" src="../images/logo.gif" alt="nprLogo"></a>
+            </li>
+            <li><a href="https://github.com/mallen2018/news.scraper" target="blank">Git Hub Repo</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+
+  {{!-- parallax with coffee backdrop --}}
+  <div class="parallax-container">
+    <div class="parallax"><img src="../images/coffee.jpg"></div>
+      <br>
+      <br>>
+  </div>  
+
+  {{!-- banner asking user to scrape or inform user how many articles have been scraped --}}
+  <div class="row center">
+       <ul class="collection">
+          {{#unless this.num}}
+             <li class="collection-item grey lighten-1 black-text"><h4>Scrape NPR articles by pressing the Scrape button.</h4></li>
+          {{/unless}}                  
+          {{#if this.num}}             
+              <li class="collection-item blue lighten-1 white-text"><h4>You have scraped {{this.num}} articles.</h4></li>
+          {{/if}}
+      </ul>
+  </div>
+  {{!-- Container for articles --}}
+  <div class="container">
+    <div class="row">
+    {{#each article}}
+      <div class="col l4">
+        <div class="card hoverable index">
+          <div class="card-image">
+            <a class="articleLink" href={{this.link}} target="blank"><img src="{{this.imgLink}}"></a>
+          </div>
+          <div class="card-content">
+          <h5>{{this.title}}</h5>
+            <p>{{this.teaser}}</p>
+          </div>
+          <div class="card-action center">
+            <a class="btn black" id="save" data-imglink="{{this.imgLink}}" data-title="{{this.title}}" data-link="{{this.link}}" data-teaser="{{this.teaser}}">Save Article</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+    </div>
+  </div>
+  {{!-- <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 <a href="/articles" id="savedArticles">Saved Articles</h3>
+    </div> --}}
+
+
+</main>
+
+<footer class="page-footer black">
+    <div class="copyright grey-text center">
+        All content belongs to NPR News; all articles on this page were scraped from their site. Please visit <a class="link grey-text" href="www.npr.org/sections/news">NPR.org</a> to read more about the latest news!
+    </div>
+</footer>
+
+
